@@ -1,0 +1,11 @@
+{
+  "name": "gulp-lint-task",
+  "version": "1.0.0",
+  "description": "Gulp lint task for JustGiving build pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "leesus",
+  "license": "MIT"
+}
