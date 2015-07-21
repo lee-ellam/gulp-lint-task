@@ -8,5 +8,9 @@
   },
   "private": true,
   "author": "leesus",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-jshint": "^1.11.2",
+    "jshint-stylish": "^2.0.1"
+  }
 }
