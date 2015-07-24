@@ -13,7 +13,7 @@ var gulp = require('gulp');
 var lint = require('gulp-lint-task');
 
 gulp.task('linter', lint(gulp, {
-  taskName: 'linter'
+  taskName: 'linter',
   src: '**/*.js'  
 }));
 ```
