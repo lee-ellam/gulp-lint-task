@@ -10,14 +10,12 @@ npm install lee-ellam/gulp-lint-task
 ## Usage
 ```
 var gulp = require('gulp');
-var task = require('gulp-lint-task');
+var lint = require('gulp-lint-task');
 
-task(gulp, {
+gulp.task('linter', lint(gulp, {
   taskName: 'linter'
   src: '**/*.js'  
-});
-
-gulp.task('default', ['linter']);
+}));
 ```
 
 ## Options
