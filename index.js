@@ -6,7 +6,7 @@ module.exports = function(gulp, config) {
 
   return gulp.task(config.taskName || 'lint', function() {
     return gulp.src(config.src)
-       .pipe(jshint(config.jshintrc || '/.jshintrc'))
+       .pipe(jshint(config.jshintrc || './.jshintrc'))
        .pipe(jshint.reporter(stylish));
   });
 };
