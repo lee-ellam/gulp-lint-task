@@ -48,6 +48,6 @@ gulp.task('tag', function() {
 });
 
 // Release to git
-gulp.task('release', ['test', 'bump', 'tag']);
-gulp.task('release:minor', ['test', 'bump:minor', 'tag']);
-gulp.task('release:major', ['test', 'bump:major', 'tag']);
+gulp.task('release', ['bump', 'tag']);
+gulp.task('release:minor', ['bump:minor', 'tag']);
+gulp.task('release:major', ['bump:major', 'tag']);
