@@ -12,10 +12,7 @@ npm install lee-ellam/gulp-lint-task
 var gulp = require('gulp');
 var lint = require('gulp-lint-task');
 
-gulp.task('linter', lint(gulp, {
-  taskName: 'linter',
-  src: '**/*.js'  
-}));
+gulp.task('linter', lint({ src: '**/*.js' }));
 
 gulp.task('default', ['linter']);
 ```
@@ -24,7 +21,5 @@ gulp.task('default', ['linter']);
 Task options:
 - `src`
  - *Required*. Takes a glob string or an array of glob strings.
-- `taskName`
- - *Optional*. String to reference the task, defaults to `lint`.
 - `jshintrc`
  - *Optional*. String location of .jshintrc options file.
