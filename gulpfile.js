@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var lint = require('./lib');
 var mocha = require('gulp-mocha');
+var git = require('gulp-git');
 
 // Lint task - Meta AF
 gulp.task('lint', lint({ src: './lib/*.js' }));
