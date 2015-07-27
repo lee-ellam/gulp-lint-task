@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-bump": "^0.3.1",
     "gulp-git": "^1.2.4",
     "gulp-jshint": "^1.11.2",
     "gulp-mocha": "^2.1.3",
