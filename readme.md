@@ -16,6 +16,8 @@ gulp.task('linter', lint(gulp, {
   taskName: 'linter'
   src: '**/*.js'  
 }));
+
+gulp.task('default', ['linter']);
 ```
 
 ## Options
