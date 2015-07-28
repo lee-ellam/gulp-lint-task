@@ -23,3 +23,12 @@ Task options:
  - *Required*. Takes a glob string or an array of glob strings.
 - `jshintrc`
  - *Optional*. String location of .jshintrc options file.
+- `reporter`
+ - *Optional*. JS hint compatible reporter.
+
+## Contributing
+- Please stick to the JustGiving Front End coding conventions.
+- Before submitting a pull request, please ensure all tests run.
+- `git clone` and `git checkout -b <branch_name>` and `npm install`.
+- `gulp test` to run test suite.
+- `gulp release[:minor|:major]` to bump versions and release tags.
