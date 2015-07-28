@@ -1,6 +1,6 @@
 {
   "name": "gulp-lint-task",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Gulp lint task for JustGiving build pipeline",
   "main": "lib/index.js",
   "scripts": {
