@@ -40,11 +40,13 @@ gulp.task('tag', function() {
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
 
-  return gulp.src('./')
+  return gulp.src('.')
     .pipe(git.commit(message))
     .pipe(git.tag(v, message))
-    .pipe(git.push('origin', 'master', '--tags'))
-    .pipe(gulp.dest('./'));
+    .on('end', function() {
+      this.pipe(git.push('origin', 'master', '--tags'))
+        .end();
+    });
 });
 
 // Release to git
