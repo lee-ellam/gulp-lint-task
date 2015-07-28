@@ -44,7 +44,7 @@ gulp.task('tag', function() {
     .pipe(git.commit(message))
     .pipe(git.tag(v, message))
     .on('end', function() {
-      this.pipe(git.push('origin', 'master', '--tags'))
+      this.pipe(git.push('origin', 'master', { args: '--tags' }))
         .end();
     });
 });
