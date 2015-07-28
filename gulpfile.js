@@ -51,14 +51,17 @@ gulp.task('tag', function() {
   var message = 'Tag for release ' + v;
 
   git.tag(v, message, function(err) {
-    if (err) console.error(err);
-    git.push('origin', 'master', { args: '--tags' }, function(err) {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log('Release successful');
-      }
-    });
+    if (err) {
+      throw err;
+    } else {    
+      git.push('origin', 'master', { args: '--tags' }, function(err) {
+        if (err) {
+          throw err;
+        } else {
+          console.log('Release successful');
+        }
+      });
+    }
   });
 });
 
