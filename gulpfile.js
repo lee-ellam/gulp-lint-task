@@ -16,7 +16,7 @@ gulp.task('test', ['lint'], function() {
 // Bump patch version
 gulp.task('bump', ['test'], function() {
   return gulp.src(['./package.json'])
-    .pipe(bump())
+    .pipe(bump({ type: 'patch' }))
     .pipe(gulp.dest('./'));
 });
 
@@ -34,19 +34,32 @@ gulp.task('bump:major', ['test'], function() {
     .pipe(gulp.dest('./'));
 });
 
-// Tag release in git
-gulp.task('tag', function() {
+// Commit change
+gulp.task('commit', function() {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
 
   return gulp.src('.')
-    .pipe(git.commit(message))
-    .pipe(git.tag(v, message))
-    .on('end', function() {
-      this.pipe(git.push('origin', 'master', { args: '--tags' }))
-        .end();
+    .pipe(git.commit(message));
+});
+
+// Commit and tag release in git
+gulp.task('tag', function() {
+  var pkg = require('./package.json');
+  var v = 'v' + pkg.version;
+  var message = 'Tag for release ' + v;
+
+  git.tag(v, message, function(err) {
+    if (err) console.error(err);
+    git.push('origin', 'master', { args: '--tags' }, function(err) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('Release successful');
+      }
     });
+  });
 });
 
 // Release to git
